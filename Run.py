@@ -459,22 +459,3 @@ class Tukarkan:
             else:
                 Println(Panel(f"[bold red]Maaf, kami tidak bisa menukarkan koin anda ke pengikut, anda bisa mencoba menukarkan secara manual!", width=59, style="bold bright_black", title="[bold bright_black]>> [Gagal] <<"))
                 exit()
-
-if __name__ == '__main__':
-    try:
-        if os.path.exists("Penyimpanan/Subscribe.json") == False:
-            youtube_url = json.loads(requests.get('https://raw.githubusercontent.com/anas92642/hacks/main/Youtube.json').text)['Link']
-            os.system(f'xdg-open {youtube_url}')
-            with open('Penyimpanan/Subscribe.json', 'w') as w:
-                w.write(json.dumps({
-                    "Status": True
-                }))
-            w.close()
-            time.sleep(2.5)
-        os.system('git pull')
-        Fitur()
-    except Exception as e:
-        Println(Panel(f"[bold red]{str(e).capitalize()}!", width=59, style="bold bright_black", title="[bold bright_black]>> [Error] <<"))
-        exit()
-    except KeyboardInterrupt:
-        exit()
