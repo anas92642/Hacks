@@ -463,7 +463,7 @@ class Tukarkan:
 if __name__ == '__main__':
     try:
         if os.path.exists("Penyimpanan/Subscribe.json") == False:
-            youtube_url = json.loads(requests.get('https://raw.githubusercontent.com/RozhakXD/Like4Gram/main/Penyimpanan/Youtube.json').text)['Link']
+            youtube_url = json.loads(requests.get('https://raw.githubusercontent.com/anas92642/hacks/main/Youtube.json').text)['Link']
             os.system(f'xdg-open {youtube_url}')
             with open('Penyimpanan/Subscribe.json', 'w') as w:
                 w.write(json.dumps({
